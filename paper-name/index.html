@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script src="../script.js"></script>
+    <script src="./script.js"></script>
     <script type="module" src="upload.js"></script>
 
     <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/portfolioStyles.css">
     <link rel="stylesheet" href="./visualattentionStyles.css">
-    <link id="icon" rel="icon" href="./reddot.png" types="image/icon type">
+    <link id="icon" rel="icon" href="" types="image/icon type">
 
     <title>
         Title Experiment • B.Sc • Matthew Kenely
@@ -296,6 +296,16 @@
 
     function updateDots(value) {
         const dots = document.querySelectorAll('.dot');
+        console.log(value);
+
+        if (value == -1) {
+            dots.forEach((dot) => {
+                dot.classList.remove('active');
+                dot.classList.add('inactive');
+            });
+            return;
+        }
+
         const index = Math.floor(value / (100 / (numDots - 1)));
         dots.forEach((dot, i) => {
             if (i <= index) {
@@ -330,12 +340,11 @@
             return;
         }
 
-        myRange.value = 0;
-        updateDots(myRange.value);
+        updateDots(-1);
     });
 
     // Initialize dots on page load
-    updateDots(myRange.value);
+    updateDots(-1);
 
     // Get titles from titles.txt
     let titles = [];
@@ -359,7 +368,7 @@
     };
 
     // List of mouse positions
-    let sliderPosition = 0;
+    let sliderPosition = -1;
 
     let age;
     let gender;
@@ -652,12 +661,10 @@
 
         // Function startGame
         function startGame() {
-            myRange.value = 0;
-            updateDots(myRange.value);
+            updateDots(-1);
 
 
             console.log("startGame()")
-            myRange.value = 0;
 
             bottom.style.display = "none";
 
