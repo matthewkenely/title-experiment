@@ -1,1 +1,1 @@
-<insert fact here>
+{random fact}

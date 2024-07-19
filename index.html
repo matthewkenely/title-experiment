@@ -44,10 +44,10 @@
 </head>
 
 <body class="full">
-    <p id="bottom"><a href="https://mkenely.com" target="_blank">mkenely.com</a>&nbsp•&nbsp<a id="homelink"
-            href="./visualattention">experiment</a></a>&nbsp•&nbsp<a id="homelink"
-            href="./visualattention/motivation">motivation</a></a>&nbsp•&nbsp<a id="homelink"
-            href="./visualattention/terms">terms</a>
+    <p id="bottom"><a href="#" target="_blank">yourwebsite.com</a>&nbsp•&nbsp<a id="homelink"
+            href="./">experiment</a></a>&nbsp•&nbsp<a id="homelink"
+            href="./title-experiment/motivation">motivation</a></a>&nbsp•&nbsp<a id="homelink"
+            href="./-experiment/terms">terms</a>
         <a id="ictlogo" href="http://um.edu.mt/ict/ai" target="_blank"><img src="./ictlogo.png"></a>
     </p>
 
@@ -69,24 +69,22 @@
         </div>
 
         <div id="disclaimer" style="text-align:center;">
-            <p id="disclaimertext">This is an experiment to test your <b>visual attention</b>.
+            <p id="disclaimertext">This is an experiment to <b>{add reason}</b>
 
                 <br><br>
 
                 <!-- <hr style="width: 50%; margin: auto;"> -->
 
                 You will be shown a
-                random image.
+                random news article.
 
                 <br><br>
 
-                Your task is to hover where you are looking and click on the part of the image which grabs your
-                attention the
-                most.
+                Your task is to {add task} using a slider.
 
                 <br><br>
 
-                Your <b><u>mouse movements</u></b> and where you <b><u>click</u></b> will be recorded.
+                The value you indicate on the slider will be recorded.
             </p>
             <p id="agreeterms">
                 <!-- Checkbox -->
@@ -145,7 +143,7 @@
             <p id="didyouknow"><strong><i>Did you know?</i></strong></p>
             <p id="randomfact"></p>
             <button id="nextimage">
-                <p id="nextimagetext">NEXT 5 IMAGES</p>
+                <p id="nextimagetext">NEXT 5 ARTICLES</p>
             </button>
             <p id="imagefraction"></p>
         </div>
@@ -880,37 +878,5 @@
         });
 
     doDisclaimer();
-
-    if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-        // Change "click" to "tap"
-        let disclaimertext = document.getElementById("disclaimertext");
-        disclaimertext.innerHTML = "This is an experiment to test your <b>visual attention</b>. <br> <br> You will be shown a \
-                random image. <br> <br> Your task is to tap on the part of the image which grabs your attention the \
-                most. <br> <br> Where you <b><u>tap</u></b> will be recorded.<br>"
-
-
-        let hovertext = document.getElementById("hovertext");
-        hovertext.innerHTML = "Tap on the red dot \
-                <br> \
-                <br> \
-                <small>Your task is to tap on the part of the image which grabs your attention the most</small>"
-        originalHoverText = "Tap on the red dot \
-                <br> \
-                <br> \
-                <small>Your task is to tap on the part of the image which grabs your attention the most</small>";
-    }
-    else {
-        let disclaimertext = document.getElementById("disclaimertext");
-        disclaimertext.innerHTML = "This is an experiment to test your <b>visual attention</b>. <br> <br> You will be shown a \
-                random image. <br> <br> Your task is to hover where you are looking and click on the part of the image which grabs your attention the \
-                most. <br> <br> Your <b><u>mouse movements</u></b> and where you <b><u>click</u></b> will be recorded."
-
-        let hovertext = document.getElementById("hovertext");
-        hovertext.innerHTML = "Hover over the red dot \
-                <br> \
-                <br> \
-                <small>Your task is to hover where you are looking and <br>click on the part of the image which grabs your attention the most</small>"
-    }
-
 
 </script>

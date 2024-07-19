@@ -45,8 +45,8 @@
 <body>
 
     <p id="bottom">
-        <a href="https://mkenely.com" target="_blank">mkenely.com</a>&nbsp•&nbsp<a id="homelink"
-            href="../visualattention">experiment</a></a>&nbsp•&nbsp<a id="homelink"
+        <a href="#" target="_blank">yourwebsite.com</a>&nbsp•&nbsp<a id="homelink"
+            href="../">experiment</a></a>&nbsp•&nbsp<a id="homelink"
             href="./motivation">motivation</a></a>&nbsp•&nbsp<a id="homelink"
             href="./terms">terms</a>
         
@@ -63,7 +63,7 @@
 
             <br><br>
             
-            You must be 12 years or older to participate in this experiment.
+            You must be {age} years or older to participate in this experiment.
 
             <br><br>
 
@@ -78,8 +78,7 @@
 
         <ol id="terms">
             <li>Your age and gender (for correlation purposes).</li>
-            <li><b>Mouse movement</b> whenever a test image is shown.</li>
-            <li>The location in test images where you <b>click</b>.</li>
+            <li>The value you indicate using the <b>slider</b> whenever an article is shown.</li>
         </ol>
 
         <small><sup>*</sup>A "Rather not say" option is provided.</small>
@@ -117,29 +116,15 @@
 
     // On button hover, change the background color fade into white
     start.addEventListener('mouseenter', () => {
-        start.style.backgroundColor = "#dfdfdf";
-        startText.style.color = "#181818";
-    });
-
-    // On button hover, change the background color fade into white
-    start.addEventListener('mouseleave', () => {
         start.style.backgroundColor = "#181818";
         startText.style.color = "#dfdfdf";
     });
 
-    let terms = document.getElementById("terms");
+    // On button hover, change the background color fade into white
+    start.addEventListener('mouseleave', () => {
+        start.style.backgroundColor = "#dfdfdf";
+        startText.style.color = "#181818";
+    });
 
-    if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-        terms.innerHTML = " \
-        <li>Your age and gender<sup>*</sup> (for correlation purposes).</li> \
-        <li>The location in test images where you <b>tap</b>.</li> \
-        "
-    }
-    else {
-        terms.innerHTML = " \
-        <li>Your age and gender<sup>*</sup> (for correlation purposes).</li> \
-        <li><b>Mouse movement</b> whenever a test image is shown.</li> \
-        <li>The location in test images where you <b>click</b>.</li> \
-        "
-    }
+    let terms = document.getElementById("terms");
 </script>
