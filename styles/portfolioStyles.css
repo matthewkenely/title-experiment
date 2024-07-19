@@ -15,7 +15,7 @@ main {
     outline: none;
     transition: 0.4s;
     text-align: left;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     letter-spacing: 1px;
     font-weight: 100;
 }
@@ -37,7 +37,7 @@ main {
     width: 100%;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     text-align: left;
     font-size: 15px;
 }
@@ -157,7 +157,7 @@ main {
 }
 
 h5 {
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     font-weight: 100;
     font-size: 1em;
     text-align: left;

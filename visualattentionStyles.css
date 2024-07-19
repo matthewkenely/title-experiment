@@ -38,7 +38,7 @@ b {
 }
 
 strong {
-    font-family: JetBrains Mono;
+    font-family: Roboto;
 }
 
 
@@ -66,7 +66,7 @@ strong {
     padding-left: 1em;
     color: grey;
     text-decoration: none;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     font-size: 0.7em;
     letter-spacing: 0.5px;
     background: var(--navy);
@@ -276,7 +276,7 @@ ol {
 }
 
 #starttext, #submittext {
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     letter-spacing: 2px;
     font-weight: bold;
     line-height: 0;
@@ -365,7 +365,7 @@ ol {
 }
 
 #nextimagetext {
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     letter-spacing: 2px;
     font-weight: bold;
     line-height: 0;
@@ -378,7 +378,7 @@ ol {
 }
 
 #imagefraction {
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     letter-spacing: 2px;
     font-weight: bold;
     line-height: 0;
@@ -409,6 +409,63 @@ ol {
     max-height: 100%;
     max-width: 100%;
     z-index: 9999;
+}
+
+#maintitle {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#myRange {
+    height: 3em;
+    opacity: 0;
+    width: 100%;
+    margin: 0;
+}
+
+#slider {
+    position: relative;
+    width: 33%; /* Adjust the width as needed */
+    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    /* Offset up slightly */
+    transform: translateY(-15px);
+}
+
+#dot-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    width: 100%;
+    gap: 10px;
+}
+
+.dot {
+    width: 0.8em;
+    height: 0.8em;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 10px;
+    transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.dot.active {
+    background-color: white;
+    opacity: 1; /* Fully opaque when active */
+    transform: scale(1); /* Scale to normal size */
+}
+
+.dot.inactive {
+    opacity: 0.2; /* Invisible when not active */
+    transform: scale(0.7); /* Slightly smaller for fade effect */
 }
 
 #saliencydef {
@@ -476,7 +533,7 @@ small {
     width: 100%;
     color: var(--white);
     background-color: #181818;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     font-size: 1em;
     text-align: left;
     border: 1px solid var(--dim);
@@ -495,7 +552,7 @@ small {
     /* color: var(--white); */
     color: gray;
     background-color: #181818;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     font-size: 1em;
     text-align: left;
     border: none;

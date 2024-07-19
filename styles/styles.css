@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
     --white: #dfdfdf;
@@ -68,7 +68,7 @@ body {
     background: var(--navy);
 
     font-size: 18px;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     letter-spacing: -0.5px;
 
     min-height: calc(100vh - 10vh);
@@ -129,7 +129,7 @@ main a:hover {
 h1 {
     font-size: 24px;
     margin: 0.5em;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     letter-spacing: 0.5px;
 }
 
@@ -144,7 +144,7 @@ h3 {
     text-transform: uppercase;
     font-weight: 100;
     letter-spacing: 3px;
-    font-family: JetBrains Mono;
+    font-family: Roboto;
     text-align: center;
     padding-top: 2em;
     padding-bottom: 1em;
