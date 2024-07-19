@@ -424,27 +424,30 @@ ol {
     opacity: 0;
     width: 100%;
     margin: 0;
+    transform: translateY(-15px);
 }
 
 #slider {
     position: relative;
-    width: 33%; /* Adjust the width as needed */
+    width: 400px; /* Adjust the width as needed */
+    max-width: 80%;
     /* height: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 2em;
     /* Offset up slightly */
-    transform: translateY(-15px);
 }
 
 #dot-container {
     display: flex;
-    justify-content: space-between;
-    position: absolute;
+    justify-content: space-between; /* Distributes dots evenly with space between them */
+    align-items: center; /* Centers the dots vertically within the container */
+    position: relative; /* Ensure it is positioned relative to its normal flow */
     top: 10px; /* Adjust as needed */
     width: 100%;
-    gap: 10px;
+    gap: 20px; /* Adjust this value to increase or decrease space between dots */
 }
 
 .dot {
@@ -452,8 +455,7 @@ ol {
     height: 0.8em;
     background-color: gray;
     border-radius: 50%;
-    position: absolute;
-    margin-left: 10px;
+    /* position: absolute; */
     transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
 }
 

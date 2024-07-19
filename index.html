@@ -286,7 +286,7 @@
     let slider = document.getElementById("slider");
     let myRange = document.getElementById("myRange");
     let dotContainer = document.getElementById("dot-container");
-    let numDots = 15;
+    let numDots = 10;
 
 
     // Create and position 10 dots
@@ -319,7 +319,9 @@
     // Handle mouse movement for precise dot activation
     myRange.addEventListener('mousemove', function(e) {
         const rect = myRange.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left;
+        let offsetX = e.clientX - rect.left;
+        // Move offset to right to adjust for width of the dot, 0.4em
+        offsetX += 15;
         const value = (offsetX / rect.width) * 100; // Calculate value based on mouse position
         myRange.value = Math.min(Math.max(value, 0), 100);
         updateDots(myRange.value);
@@ -389,8 +391,12 @@
         let dots = document.querySelectorAll('.active');
         dots[dots.length - 1].style.transform = "scale(1.5)";
 
-
         myRange.removeEventListener('click', handleSlider);
+
+        // Prevent all mouse events
+        myRange.style.pointerEvents = 'none';
+        
+
         sliderPosition = myRange.value;
         imageCount++;
         setProgress(imageCount);
@@ -548,9 +554,13 @@
 
     // Function game
     function doGame() {
+        myRange.style.pointerEvents = 'auto';
+
         let dots = document.querySelectorAll('.dot');
         dots.forEach((dot) => {
             dot.style.transform = "scale(1)";
+            dot.classList.remove('active');
+            dot.classList.add('inactive');
         });
 
         console.log("doGame()")
@@ -747,7 +757,7 @@
             });
 
         // Wait for 2 seconds and call thank You
-        setTimeout(() => thankYou(), 1500);
+        setTimeout(() => thankYou(), 500);
 
     }
 
@@ -839,27 +849,22 @@
     function getRandomFact() {
         let fact = "";
 
-        let random = Math.floor(Math.random() * saliencyFacts.length);
+        let random = Math.floor(Math.random() * facts.length);
 
-        fact = saliencyFacts[random];
+        fact = facts[random];
 
         return fact;
     }
 
 
-    const saliencyFacts = [
-        "Saliency detection is inspired by human vision and aims to identify the most visually significant regions within an image.",
-        "Computer vision algorithms for saliency detection can help improve image compression by focusing on the most important parts of an image.",
-        "Saliency maps created by computer vision can be used to enhance the effectiveness of video compression, reducing bandwidth and storage requirements.",
-        "Saliency detection is widely used in eye-tracking technology, allowing researchers to study where people naturally focus their attention in images and videos.",
-        "Saliency maps are useful in content-aware image resizing, enabling the preservation of the most important image elements during resizing.",
-        "Saliency detection has applications in improving the user experience in website design by guiding the placement of essential elements on a web page.",
-        "In medicine, saliency detection can help radiologists quickly identify potentially abnormal regions in medical images such as X-rays and CT scans.",
-        "Saliency models are used in autonomous drones to help them focus on the most relevant information in their environment, aiding navigation and obstacle avoidance.",
-        "Saliency detection can be used to make images more accessible to visually impaired individuals by providing verbal descriptions of the most salient features.",
-        "Saliency detection in video processing can be used to highlight important events in surveillance footage, making it easier for security personnel to review video data."
-    ];
+    let facts;
 
+    // Get facts from facts.txt
+    fetch('./facts.txt')
+        .then(response => response.text())
+        .then(text => {
+            facts = text.split('\n');
+        });
 
     doDisclaimer();
 
