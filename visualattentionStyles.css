@@ -496,8 +496,8 @@ big {
 
 small {
     color: grey;
-    font-size: 0.6em;
-    /* margin-top: 2em; */
+    font-size: 0.8em;
+    margin-top: 2em;
 }
 
 #infosubmission {
