@@ -1,0 +1,4 @@
+p {
+    /* Distribute downwards */
+    flex-direction: column;
+}
