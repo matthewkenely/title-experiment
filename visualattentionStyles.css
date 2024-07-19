@@ -254,7 +254,7 @@ ol {
     width: auto;
     height: 3em;
     margin: 3em;
-    background-color: #181818;
+    background-color: var(--navy);
     border: 2px solid var(--white);
     border-bottom-color: var(--white);
     border-radius: 2px;
@@ -282,6 +282,7 @@ ol {
     line-height: 0;
     text-align: center;
     pointer-events: 'none';
+    color: var(--white);
 
     transform: translateY(1px);
 
@@ -354,7 +355,7 @@ ol {
     height: 3em;
     margin: 5em;
     margin-bottom: 1em;
-    background-color: #181818;
+    background-color: var(--navy);
     border: 2px solid var(--white);
     border-bottom-color: var(--white);
     border-radius: 2px;
@@ -398,7 +399,7 @@ ol {
     width: 100vw;
     height: 100vh;
 
-    background: #181818;
+    background: var(--navy);
     z-index: 9998;
 
     display: none;
@@ -453,14 +454,14 @@ ol {
 .dot {
     width: 0.8em;
     height: 0.8em;
-    background-color: gray;
+    background-color: var(--white);
     border-radius: 50%;
     /* position: absolute; */
     transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
 }
 
 .dot.active {
-    background-color: white;
+    background-color: var(--white);
     opacity: 1; /* Fully opaque when active */
     transform: scale(1); /* Scale to normal size */
 }
@@ -534,7 +535,7 @@ small {
     height: 2em;
     width: 100%;
     color: var(--white);
-    background-color: #181818;
+    background-color: var(--navy);
     font-family: Roboto;
     font-size: 1em;
     text-align: left;
@@ -553,7 +554,7 @@ small {
     width: 100%;
     /* color: var(--white); */
     color: gray;
-    background-color: #181818;
+    background-color: var(--navy);
     font-family: Roboto;
     font-size: 1em;
     text-align: left;

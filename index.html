@@ -312,18 +312,28 @@
     }
 
     // Update dots based on slider input
-    myRange.addEventListener('input', function() {
-        updateDots(this.value);
-    });
+    // myRange.addEventListener('input', function() {
+    //     updateDots(this.value);
+    // });
 
     // Handle mouse movement for precise dot activation
     myRange.addEventListener('mousemove', function(e) {
         const rect = myRange.getBoundingClientRect();
         let offsetX = e.clientX - rect.left;
         // Move offset to right to adjust for width of the dot, 0.4em
-        offsetX += 15;
+        offsetX += 20;
         const value = (offsetX / rect.width) * 100; // Calculate value based on mouse position
         myRange.value = Math.min(Math.max(value, 0), 100);
+        updateDots(myRange.value);
+    });
+
+    myRange.addEventListener('mouseleave', function() {
+        // Check if mouse event are still active
+        if (myRange.style.pointerEvents == 'none') {
+            return;
+        }
+
+        myRange.value = 0;
         updateDots(myRange.value);
     });
 
@@ -431,14 +441,14 @@
 
         // On button hover, change the background color fade into white
         start.addEventListener('mouseenter', () => {
-            start.style.backgroundColor = "#dfdfdf";
-            startText.style.color = "#181818";
+            start.style.backgroundColor = "#181818";
+            startText.style.color = "#dfdfdf";
         });
 
         // On button hover, change the background color fade into white
         start.addEventListener('mouseleave', () => {
-            start.style.backgroundColor = "#181818";
-            startText.style.color = "#dfdfdf";
+            start.style.backgroundColor = "#dfdfdf";
+            startText.style.color = "#181818";
         });
 
         // Add a "click" event listener to the game div
@@ -476,19 +486,19 @@
         let genderBox = document.getElementById("gender");
 
         genderBox.addEventListener('change', () => {
-            genderBox.style.color = "#dfdfdf";
+            genderBox.style.color = "#181818";
         });
 
         // On button hover, change the background color fade into white
         formsubmit.addEventListener('mouseenter', () => {
-            formsubmit.style.backgroundColor = "#dfdfdf";
-            submittext.style.color = "#181818";
+            formsubmit.style.backgroundColor = "#181818";
+            submittext.style.color = "#dfdfdf";
         });
 
         // On button hover, change the background color fade into white
         formsubmit.addEventListener('mouseleave', () => {
-            formsubmit.style.backgroundColor = "#181818";
-            submittext.style.color = "#dfdfdf";
+            formsubmit.style.backgroundColor = "#dfdfdf";
+            submittext.style.color = "#181818";
         });
 
         formsubmit.style.opacity = '0.3';
@@ -555,13 +565,6 @@
     // Function game
     function doGame() {
         myRange.style.pointerEvents = 'auto';
-
-        let dots = document.querySelectorAll('.dot');
-        dots.forEach((dot) => {
-            dot.style.transform = "scale(1)";
-            dot.classList.remove('active');
-            dot.classList.add('inactive');
-        });
 
         console.log("doGame()")
         // console.log("STARTING GAME " + imageCount);
@@ -652,7 +655,8 @@
 
         // Function startGame
         function startGame() {
-
+            myRange.value = 0;
+            updateDots(myRange.value);
 
 
             console.log("startGame()")
@@ -712,6 +716,15 @@
 
             myRange.style.cursor = "pointer";
             myRange.addEventListener('click', handleSlider);
+
+            
+
+            let dots = document.querySelectorAll('.dot');
+            dots.forEach((dot) => {
+                dot.style.transform = "scale(1)";
+                // dot.classList.remove('active');
+                // dot.classList.add('inactive');
+            });
         }
     }
 
@@ -818,14 +831,14 @@
 
             // On button hover, change the background color fade into white
             button.addEventListener('mouseenter', () => {
-                button.style.backgroundColor = "#dfdfdf";
-                button.style.color = "#181818";
+                button.style.backgroundColor = "#181818";
+                button.style.color = "#dfdfdf";
             });
 
             // On button hover, change the background color fade into white
             button.addEventListener('mouseleave', () => {
-                button.style.backgroundColor = "#181818";
-                button.style.color = "#dfdfdf";
+                button.style.backgroundColor = "#dfdfdf";
+                button.style.color = "#181818";
             });
 
             // Add a "click" event listener to the game div
